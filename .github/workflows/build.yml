@@ -13,8 +13,9 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build with Buildozer
-      uses: Kryality/buildozer-action@v1
+      uses: ta-tikoma/buildozer-action@v3
       with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         command: buildozer -v android debug
 
     - name: Upload APK Artifact
