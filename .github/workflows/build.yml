@@ -1,4 +1,4 @@
-name: Manual Build APK
+name: Build APK
 
 on:
   push:
@@ -45,12 +45,12 @@ jobs:
           libstdc++6:i386 \
           libz1:i386
 
-    - name: Install Buildozer and Cython
+    - name: Install Buildozer and Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install "Cython<3.0" buildozer
 
-    - name: Run Buildozer
+    - name: Build with Buildozer
       run: |
         buildozer -v android debug
 
